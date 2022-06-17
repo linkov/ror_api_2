@@ -1,0 +1,12 @@
+{
+  "published": true,
+  "name": "Create Presenterquestions",
+  "end_point": "v1/presenterquestions.json",
+  "http_method": "POST",
+  "params": [],
+  "header": {},
+  "examples": [{
+    "request": {},
+    "response": {}
+  }]
+}

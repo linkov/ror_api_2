@@ -1,0 +1,2 @@
+class Artrelation < ApplicationRecord
+end

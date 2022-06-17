@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feedback: one
+  arttag: one
+  count: 
+
+two:
+  feedback: two
+  arttag: two
+  count: 

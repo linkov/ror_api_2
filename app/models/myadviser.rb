@@ -1,0 +1,3 @@
+class Myadviser < ApplicationRecord
+  belongs_to :user
+end

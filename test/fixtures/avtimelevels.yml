@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timeposition: 1.5
+  level: 1
+  avfeedbacklane: one
+
+two:
+  timeposition: 1.5
+  level: 1
+  avfeedbacklane: two

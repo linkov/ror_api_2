@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  skiptime: 2019-08-01 16:37:31
+  project: one
+  category: one
+  parentcategory: one
+
+two:
+  user: two
+  skiptime: 2019-08-01 16:37:31
+  project: two
+  category: two
+  parentcategory: two

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fromcategory_id: 1
+  tocategory_id: 1
+  weight: 1.5
+
+two:
+  fromcategory_id: 1
+  tocategory_id: 1
+  weight: 1.5

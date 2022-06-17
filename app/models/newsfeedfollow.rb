@@ -1,0 +1,2 @@
+class Newsfeedfollow < ApplicationRecord
+end

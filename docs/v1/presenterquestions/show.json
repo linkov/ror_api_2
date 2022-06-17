@@ -1,0 +1,12 @@
+{
+  "published": true,
+  "name": "Show Presenterquestion",
+  "end_point": "v1/presenterquestions/:id.json",
+  "http_method": "GET",
+  "params": [],
+  "header": {},
+  "examples": [{
+    "request": {},
+    "response": {}
+  }]
+}

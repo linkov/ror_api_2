@@ -1,0 +1,144 @@
+<% if Contentblock.where(:code => "seo_blog_description").first && Contentblock.where(:code => "seo_blog_title").first && Contentblock.where(:code => "seo_blog_keywords").first%>
+  <% set_meta_tags keywords:Contentblock.where(:code => "seo_blog_keywords").first.content, description: Contentblock.where(:code => "seo_blog_description").first.content, title: Contentblock.where(:code => "seo_blog_title").first.content, og: {type:"website", url:request.original_url, description: Contentblock.where(:code => "seo_blog_description").first.content, title: Contentblock.where(:code => "seo_blog_title").first.content, image: {url:image_url('og_logo.png') } }, twitter: {card:"summary", image: image_url('og_logo.png') } %>
+<% end %>
+
+
+<div class="container-fluid blog">
+  <div class="row header-row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-7">
+          <h1 class="header-text header-text-main"><%= Contentblock.where(:code => "bg1").first.content %></h1>
+    </div>
+
+  </div>
+
+  <div class="row header-row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-9">
+
+      <div id="masonry-container" class="transitions-enabled centered infinite-scroll clearfix">
+
+        <% Post.all.order('created_at DESC').each.with_index do |post, index| %>
+
+        <div class="box col4">
+          <div class="post-container">
+                <p class="post-category">
+                  <% if post.category %>
+                   <%= post.category.title %>
+                  <% end %>
+                </p>
+                <% if post.coverimage.url %>
+                  <img class="post-image" src="<%= request.base_url+post.coverimage.url %>" />
+                <% else %>
+                  <img class="post-image" src="http://breakingnewslive.net/upload/noimage.jpg" />
+                <% end %>
+                <div class="post-title-container">
+                  <a href="/blog/<%= post.slug %>">
+                    <% if post.title %>
+                      <h1 class="post-title"><%= post.title %></h1>
+                    <% end %>
+
+                  </a>
+                </div>
+
+
+          </div>
+        </div>
+
+
+        <% end %>
+      </div>
+
+
+      <!-- <div class="card-columns d-none d-sm-block">
+        <% Post.all.order('created_at DESC').each.with_index do |post, index| %>
+      <div class="card" style="display:inline-block !important;">
+
+           <div class="card post-container">
+                 <p class="post-category">
+                   <% if post.category %>
+                    <%= post.category.title %>
+                   <% end %>
+                 </p>
+                 <% if post.coverimage.url %>
+                   <img class="post-image" src="<%= request.base_url+post.coverimage.url %>" />
+                 <% else %>
+                   <img class="post-image" src="http://breakingnewslive.net/upload/noimage.jpg" />
+                 <% end %>
+                 <div class="post-title-container">
+                   <a href="/blog/<%= post.slug %>">
+                     <% if post.title %>
+                       <h1 class="post-title"><%= post.title %></h1>
+                     <% end %>
+
+                   </a>
+                 </div>
+
+
+           </div>
+
+
+        </div>
+
+
+       <% end %>
+
+      </div>
+
+
+      <div class="card-columns d-block d-sm-none">
+        <% Post.all.order('created_at DESC').each.with_index do |post, index| %>
+      <div class="card">
+
+           <div class="card post-container">
+                 <p class="post-category">
+                   <% if post.category %>
+                    <%= post.category.title %>
+                   <% end %>
+                 </p>
+                 <% if post.coverimage.url %>
+                   <img class="post-image" src="<%= request.base_url+post.coverimage.url %>" />
+                 <% else %>
+                   <img class="post-image" src="http://breakingnewslive.net/upload/noimage.jpg" />
+                 <% end %>
+                 <div class="post-title-container">
+                   <a href="/blog/<%= post.slug %>">
+                     <% if post.title %>
+                       <h1 class="post-title"><%= post.title %></h1>
+                     <% end %>
+
+                   </a>
+                 </div>
+
+
+           </div>
+
+
+        </div>
+
+
+       <% end %>
+
+      </div>
+ -->
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+  <div class="row header-row header-bottom-spacer">
+  </div>
+
+
+</div>

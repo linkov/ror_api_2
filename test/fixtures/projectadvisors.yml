@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  myadviser: one
+  invitesent: false
+
+two:
+  project: two
+  myadviser: two
+  invitesent: false

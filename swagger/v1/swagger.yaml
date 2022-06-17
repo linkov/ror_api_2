@@ -1,0 +1,234 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/presenterquestionanswers":
+    post:
+      summary: Creates a presenterquestionanswer
+      tags:
+      - Rateflow
+      parameters: []
+      responses:
+        '201':
+          description: presenterquestionanswer created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answer:
+                  type: string
+                presenterquestion_id:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - answer
+              - presenterquestion_id
+              - user_id
+          application/xml:
+            schema:
+              type: object
+              properties:
+                answer:
+                  type: string
+                presenterquestion_id:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - answer
+              - presenterquestion_id
+              - user_id
+  "/api/v1/presenterquestions":
+    post:
+      summary: Creates a lesson
+      tags:
+      - Advisors
+      parameters: []
+      responses:
+        '201':
+          description: presenterquestion created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                token:
+                  type: string
+                project_id:
+                  type: integer
+                start:
+                  type: datetime
+                end:
+                  type: datetime
+                conversation_id:
+                  type: integer
+                teacher_id:
+                  type: integer
+                student_id:
+                  type: integer
+                minutes:
+                  type: integer
+                pronunciation_rate:
+                  type: integer
+                knowledge_rate:
+                  type: integer
+                explanation_rate:
+                  type: integer
+                positive_comment:
+                  type: string
+                negative_comment:
+                  type: string
+              required:
+              - student_id
+              - teacher_id
+              - conversation_id
+              - project_id
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                token:
+                  type: string
+                project_id:
+                  type: integer
+                start:
+                  type: datetime
+                end:
+                  type: datetime
+                conversation_id:
+                  type: integer
+                teacher_id:
+                  type: integer
+                student_id:
+                  type: integer
+                minutes:
+                  type: integer
+                pronunciation_rate:
+                  type: integer
+                knowledge_rate:
+                  type: integer
+                explanation_rate:
+                  type: integer
+                positive_comment:
+                  type: string
+                negative_comment:
+                  type: string
+              required:
+              - student_id
+              - teacher_id
+              - conversation_id
+              - project_id
+  "/api/v1/pets":
+    post:
+      summary: Creates a pet
+      tags:
+      - Pets
+      parameters: []
+      responses:
+        '201':
+          description: pet created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                photo_url:
+                  type: string
+                status:
+                  type: string
+              required:
+              - name
+              - status
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                photo_url:
+                  type: string
+                status:
+                  type: string
+              required:
+              - name
+              - status
+  "/api/v1/pets/{id}":
+    get:
+      summary: Retrieves a pet
+      tags:
+      - Pets
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: name found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  photo_url:
+                    type: string
+                  status:
+                    type: string
+                required:
+                - id
+                - name
+                - status
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  photo_url:
+                    type: string
+                  status:
+                    type: string
+                required:
+                - id
+                - name
+                - status
+        '404':
+          description: pet not found
+          content: {}
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

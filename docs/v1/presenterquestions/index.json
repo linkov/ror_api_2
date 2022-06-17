@@ -1,0 +1,12 @@
+{
+  "published": true,
+  "name": "Index Presenterquestions",
+  "end_point": "v1/presenterquestions.json",
+  "http_method": "GET",
+  "params": [],
+  "header": {},
+  "examples": [{
+    "request": {},
+    "response": {}
+  }]
+}
